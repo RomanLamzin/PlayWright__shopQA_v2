@@ -1,7 +1,9 @@
 from playwright.sync_api import Page, expect
 
+from Base.base_class import Base
 
-class Product_page():
+
+class Product_page(Base):
 
     def __init__(self, page: Page):
         self.page = page
@@ -10,11 +12,7 @@ class Product_page():
         self.cartBtn = page.locator("#shopping_cart_container")
         self.BikeLightPrice_value = ''
 
-    def assert_product_page(self, title, url):
-        """Проверка  url и титульника страницы product"""
-        cur_url = self.page.url
-        expect(self.product_title).to_have_text(title)
-        assert url == cur_url
+
 
     def addBikeLightToCart(self):
         """Добавляем товар в корзину и переходим в неё"""

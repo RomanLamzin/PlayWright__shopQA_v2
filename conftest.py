@@ -1,6 +1,7 @@
 import pytest
 
 from pages.checkout_page import Checkout_page
+from pages.complete_page import Complete_page
 from pages.login_page import Login_page
 from pages.overview_page import Overview_page
 from pages.product_page import Product_page
@@ -27,3 +28,7 @@ def checkout_page(page):
 @pytest.fixture
 def overview_page(page):
     return Overview_page(page)
+
+@pytest.fixture
+def complete_page(page):
+    return Complete_page(page)

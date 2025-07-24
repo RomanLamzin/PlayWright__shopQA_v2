@@ -1,7 +1,9 @@
 from playwright.sync_api import Page, expect
 
+from Base.base_class import Base
 
-class Overview_page():
+
+class Overview_page(Base):
 
     def __init__(self, page: Page):
         self.page = page
@@ -14,11 +16,7 @@ class Overview_page():
 
         self.finishBtn = page.locator("#finish")
 
-    def assert_overview_page(self, title, url):
-        """Проверка  url и титульника страницы Overview"""
-        cur_url = self.page.url
-        expect(self.product_title).to_have_text(title)
-        assert url == cur_url
+
 
     def checkAllProductItem(self, p_price, p_name):
 
