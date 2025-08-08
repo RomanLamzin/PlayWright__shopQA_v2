@@ -1,3 +1,5 @@
+from time import sleep
+
 from playwright.sync_api import Page, expect
 
 from Base.base_class import Base
@@ -21,4 +23,6 @@ class Cart_page(Base):
 
         self.cart_p = float(self.priceOfProductInCart.inner_text().replace('$',''))
         assert p_price == self.cart_p
+        self.get_screenShot()
+        sleep(1)
         self.checkoutBtn.click()

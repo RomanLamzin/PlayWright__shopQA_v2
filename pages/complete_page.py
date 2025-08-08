@@ -18,3 +18,4 @@ class Complete_page(Base):
     def check_order_confirm(self):
         expect(self.image).to_be_visible()
         assert self.approved_text.inner_text() == "Thank you for your order!"
+        self.get_screenShot()

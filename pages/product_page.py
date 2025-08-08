@@ -21,6 +21,7 @@ class Product_page(Base):
         """Cразу фиксируем стоимость товара"""
         self.BikeLightPrice = self.page.locator('//*[@id="remove-sauce-labs-bike-light"]/preceding-sibling::div[1]')
         self.BikeLightPrice_value = float(self.BikeLightPrice.inner_text().replace('$', ''))
+        self.get_screenShot()
         self.cartBtn.click()
 
     def getBikeLightPrice_value(self):

@@ -1,3 +1,4 @@
+from time import sleep
 
 from playwright.sync_api import Page, expect
 
@@ -20,7 +21,10 @@ class Checkout_page(Base):
         self.firstNameInput.fill('Romanio')
         self.lastNameInput.fill('Armanio')
         self.postalCodeInput.fill('443100')
+        self.get_screenShot()
+        sleep(1)
         self.continueBtn.click()
+
 
 
 

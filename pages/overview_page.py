@@ -32,6 +32,7 @@ class Overview_page(Base):
         assert p_name == self.itemNameValue
         assert p_price == self.itemPriceValue
         assert countProductTotalPrice == countPageTotalPrice
+        self.get_screenShot()
 
         self.finishBtn.click()
 
